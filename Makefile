@@ -11,6 +11,6 @@ image: build/cumulus_debug_api.Dockerfile
 container-shell:
 	docker run -it --rm \
 		--user `id -u` \
-		-v ${PWD}:/cumulus_debug_api \
+		-v ${PWD}:/cumulus-debug-api \
 		-v ~/.aws:/.aws \
 		cumulus_debug_api
