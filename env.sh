@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if (( $# != 1 )); then
+if (( $# != 2 )); then
     echo "Command structure: source env.sh aws_profile_name deploy_name"
 else
     export AWS_PROFILE=$1
