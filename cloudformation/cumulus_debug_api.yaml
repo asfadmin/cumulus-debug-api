@@ -2,11 +2,18 @@ AWSTemplateFormatVersion: 2010-09-09
 
 Description: "A 'thinner' egress app using lambda."
 
+Parameters:
+  BucketnamePrefix:
+    Type: String
+    Default: ''
+    Description: "Bucket prefix"
+
 Resources:
   CumulusDebug :
     Type: 'AWS::ApiGateway::RestApi'
     Properties:
       Name: DmsRestAPI
+
   ParseLambda:
     Type: 'AWS::Lambda::Function'
     Properties:
