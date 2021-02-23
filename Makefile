@@ -13,4 +13,4 @@ container-shell:
 		--user `id -u` \
 		-v ${PWD}:/cumulus_debug_api.Dockerfile \
 		-v ~/.aws:/.aws \
-		buen_aire_backend
+		cumulus_debug_api
