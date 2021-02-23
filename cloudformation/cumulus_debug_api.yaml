@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: "A 'thinner' egress app using lambda."
+
+Resources:
+  CumulusDebug :
+    Type: 'AWS::ApiGateway::RestApi'
+    Properties:
+      Name: DmsRestAPI
+  ParseLambda:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Handler: index.lambda_handler
+      Code:
+        S3Bucket: dms-cumulus-debug-code
+        S3Key: lambda.zip
+      FunctionName: parse_cumulus_bug
+      Role: arn:aws:iam::871271927522:role/aksf-w2-cumulus-dev-lambda-processing
+      Runtime: python3.7
+      Timeout: 5
